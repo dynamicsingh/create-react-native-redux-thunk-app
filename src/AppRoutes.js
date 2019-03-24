@@ -1,19 +1,40 @@
-import {createStackNavigator, createAppContainer} from "react-navigation";
+import {createStackNavigator, createDrawerNavigator, createAppContainer} from "react-navigation";
 import React, {Component} from 'react';
-import Home from './components/presentational/home/Home';
 import AppText from './components/presentational/appText/AppText';
 import Sample from './components/containers/sampleContainer/SampleContainer';
+import SideBar from "./baseComponents/Sidebar/SideBar";
 
-//navigator routes can be exported as objects
-export const allRoutes = {
+/********************* Drawer Navigator ***************/
+const allRoutesDrawerNavigator = {
     Home: { screen:  Sample},
     SecondScreen: { screen:  AppText}
 };
-export const initialRoute = {
-    initialRouteName: 'Home',
-};
-const stack = createStackNavigator(allRoutes, initialRoute);
 
-export default createAppContainer(stack);
+const initialRoutesDrawerNavigator = {
+    initialRouteName: "Home",
+    contentOptions: {
+        activeTintColor: "#e91e63"
+    },
+    contentComponent: props => <SideBar {...props} />
+};
+
+const Drawer = createDrawerNavigator(allRoutesDrawerNavigator, initialRoutesDrawerNavigator);
+
+
+/********************* Stack Navigator ***************/
+const allRoutesStackNavigator = {
+    Drawer: { screen: Drawer }
+};
+
+const initialRouteStackNavigator = {
+    initialRouteName: 'Drawer',
+    headerMode: 'none', //removing default header
+};
+
+const AppNavigator = createStackNavigator(allRoutesStackNavigator, initialRouteStackNavigator);
+
+const AppContainer = createAppContainer(AppNavigator);
+
+export default AppContainer;
 
 

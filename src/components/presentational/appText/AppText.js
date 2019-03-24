@@ -1,14 +1,22 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import {StyleSheet, Text, View, Switch} from 'react-native';
+import {Item, Input} from 'native-base';
+import BaseHeader from './../../../baseComponents/Header/Header'
 
 const appTextComponent = ({instructions}) => {
     return (
-        <View style={styles.container}>
-            <Text style={styles.welcome}>Welcome to React Native + Redux Starter Kit</Text>
-            <Text style={{...styles.instructions, marginTop: 0}}>It uses React Native +  Redux + Redux Thunk</Text>
-            <Text style={styles.instructions}>{instructions}</Text>
-            <Switch value={false} />
-        </View>
+        <Fragment>
+            <BaseHeader/>
+            <View style={styles.container}>
+                <Text style={styles.welcome}>Welcome to React Native + Redux Starter Kit</Text>
+                <Text style={{...styles.instructions, marginTop: 0}}>It uses React Native +  Redux + Redux Thunk</Text>
+                <Text style={styles.instructions}>{instructions}</Text>
+                <Switch value={false} />
+                <Item style={{marginTop:10}} rounded>
+                    <Input placeholder='Rounded Textbox'/>
+                </Item>
+            </View>
+        </Fragment>
     );
 };
 export default appTextComponent;
@@ -18,7 +26,6 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#F5FCFF',
     },
     welcome: {
         fontSize: 20,

@@ -3,11 +3,13 @@ import {connect} from 'react-redux';
 import SampleComponent from '../../presentational/sampleComponent/SampleComponent';
 import {Button} from 'react-native';
 import {sampleActionCreator} from './../../../actionCreators/sampleActionCreator';
+import BaseHeader from "../../../baseComponents/Header/Header";
 
 class SampleContainer extends Component {
     render() {
         return (
             <Fragment>
+                <BaseHeader/>
                 <SampleComponent
                     counterVal={this.props.counterVal}
                     updateCounter={() => this.props.updateCounter(1)}
