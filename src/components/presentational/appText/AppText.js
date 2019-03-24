@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, Switch} from 'react-native';
 
 const appTextComponent = ({instructions}) => {
     return (
@@ -7,6 +7,7 @@ const appTextComponent = ({instructions}) => {
             <Text style={styles.welcome}>Welcome to React Native + Redux Starter Kit</Text>
             <Text style={{...styles.instructions, marginTop: 0}}>It uses React Native +  Redux + Redux Thunk</Text>
             <Text style={styles.instructions}>{instructions}</Text>
+            <Switch value={false} />
         </View>
     );
 };
