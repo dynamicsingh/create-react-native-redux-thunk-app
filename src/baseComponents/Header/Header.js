@@ -7,7 +7,7 @@ class BaseHeader extends Component {
         const {navigation} = this.props;
         const currentRouter = this.props.navigation.state.routeName;
         return (
-            <Header>
+            <Header noShadow>
                 <Left>
                     <Button onPress={() => currentRouter === 'Home' ? this.props.navigation.openDrawer() : this.props.navigation.goBack()} transparent>
                         <Icon name={currentRouter === 'Home'?'menu': 'arrow-back'}/>
