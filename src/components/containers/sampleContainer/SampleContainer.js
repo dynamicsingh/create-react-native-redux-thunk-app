@@ -1,7 +1,7 @@
 import React, {Component, Fragment} from 'react';
 import {connect} from 'react-redux';
 import SampleComponent from '../../presentational/sampleComponent/SampleComponent';
-import {Button} from 'react-native';
+import {Button, Text} from 'native-base';
 import {sampleActionCreator} from './../../../actionCreators/sampleActionCreator';
 import BaseHeader from "../../../baseComponents/Header/Header";
 
@@ -14,7 +14,7 @@ class SampleContainer extends Component {
                     counterVal={this.props.counterVal}
                     updateCounter={() => this.props.updateCounter(1)}
                     componentLabel={'Sample component is loading inside sample container with counter val:'}/>
-                <Button onPress={() => this.props.navigation.navigate('SecondScreen')} title={'Navigate'}/>
+                <Button style={{alignSelf:'center'}} transparent onPress={() => this.props.navigation.navigate('SecondScreen')}><Text>Navigate</Text></Button>
             </Fragment>
         );
     }

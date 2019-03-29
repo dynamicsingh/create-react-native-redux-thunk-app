@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Header, Left, Body, Right, Button, Icon, Title, Text} from 'native-base';
+import {Header, Left, Body, Button, Icon, Title} from 'native-base';
 import { withNavigation } from 'react-navigation';
 
 class BaseHeader extends Component {
